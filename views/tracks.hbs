@@ -1,0 +1,12 @@
+<h1>Pistas del Álbum</h1>
+<ul>
+    {{#each tracks}}
+    <li>
+        <h2>{{this.name}}</h2>
+        <audio controls>
+            <source src="{{this.preview_url}}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </li>
+    {{/each}}
+</ul>

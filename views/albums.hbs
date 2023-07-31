@@ -1,0 +1,14 @@
+<h1>Álbumes del Artista</h1>
+<ul>
+    {{#each albums}}
+    <li>
+        <h2>{{this.name}}</h2>
+        {{#if this.images.length}}
+            <img src="{{this.images.[0].url}}" alt="{{this.name}}">
+        {{else}}
+            <img src="/path/to/default/image.jpg" alt="{{this.name}}">
+        {{/if}}
+        <a href="/tracks/{{this.id}}">View Tracks</a>
+    </li>
+    {{/each}}
+</ul>
