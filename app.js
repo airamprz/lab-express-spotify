@@ -7,6 +7,8 @@ const SpotifyWebApi = require('spotify-web-api-node');
 
 // require spotify-web-api-node package here:
 
+console.log(process.env.CLIENT_ID);
+
 const app = express();
 
 app.set('view engine', 'hbs');
@@ -53,7 +55,6 @@ app.get('/albums/:artistId', (req, res, next) => {
 
 app.get('/tracks/:albumId', (req, res, next) => {
     const albumId = req.params.albumId;
-    // Utilizar el método .getAlbumTracks() para obtener las pistas del álbum
     spotifyApi.getAlbumTracks(albumId)
         .then(data => {
             const tracks = data.body.items;
